@@ -1,0 +1,198 @@
+exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been changed 1`] = `
+{
+  "react-hooks/exhaustive-deps": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "enableDangerousAutofixThisMayCauseInfiniteLoops": false,
+      "properties": {
+        "additionalHooks": {
+          "type": "string"
+        },
+        "enableDangerousAutofixThisMayCauseInfiniteLoops": {
+          "type": "boolean"
+        }
+      }
+    }
+  ]
+}
+`;
+
+exports[`Plugin \"react-refresh\" config > Snapshot of the schema has not been changed 1`] = `
+{
+  "react-refresh/only-export-components": [
+    {
+      "type": "object",
+      "properties": {
+        "allowExportNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowConstantExport": {
+          "type": "boolean"
+        },
+        "customHOCs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "checkJS": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
+`;
+
+exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed 1`] = `
+{
+  "react-x/jsx-key-before-spread": [],
+  "react-x/jsx-no-comment-textnodes": [],
+  "react-x/jsx-no-duplicate-props": [],
+  "react-x/jsx-no-iife": [],
+  "react-x/jsx-no-undef": [],
+  "react-x/jsx-shorthand-boolean": [
+    {
+      "type": "integer",
+      "enum": [
+        -1,
+        1
+      ]
+    }
+  ],
+  "react-x/jsx-shorthand-fragment": [
+    {
+      "type": "integer",
+      "enum": [
+        -1,
+        1
+      ]
+    }
+  ],
+  "react-x/jsx-uses-react": [],
+  "react-x/jsx-uses-vars": [],
+  "react-x/no-access-state-in-setstate": [],
+  "react-x/no-array-index-key": [],
+  "react-x/no-children-count": [],
+  "react-x/no-children-for-each": [],
+  "react-x/no-children-map": [],
+  "react-x/no-children-only": [],
+  "react-x/no-children-prop": [],
+  "react-x/no-children-to-array": [],
+  "react-x/no-class-component": [],
+  "react-x/no-clone-element": [],
+  "react-x/no-component-will-mount": [],
+  "react-x/no-component-will-receive-props": [],
+  "react-x/no-component-will-update": [],
+  "react-x/no-context-provider": [],
+  "react-x/no-create-ref": [],
+  "react-x/no-default-props": [],
+  "react-x/no-direct-mutation-state": [],
+  "react-x/no-duplicate-key": [],
+  "react-x/no-forbidden-props": [
+    {
+      "type": "object",
+      "properties": {
+        "forbid": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "excludedNodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "prop": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "prop"
+                ]
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "includedNodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "prop": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "prop"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "react-x/no-forward-ref": [],
+  "react-x/no-implicit-key": [],
+  "react-x/no-leaked-conditional-rendering": [],
+  "react-x/no-missing-component-display-name": [],
+  "react-x/no-missing-context-display-name": [],
+  "react-x/no-missing-key": [],
+  "react-x/no-misused-capture-owner-stack": [],
+  "react-x/no-nested-component-definitions": [],
+  "react-x/no-nested-lazy-component-declarations": [],
+  "react-x/no-prop-types": [],
+  "react-x/no-redundant-should-component-update": [],
+  "react-x/no-set-state-in-component-did-mount": [],
+  "react-x/no-set-state-in-component-did-update": [],
+  "react-x/no-set-state-in-component-will-update": [],
+  "react-x/no-string-refs": [],
+  "react-x/no-unnecessary-key": [],
+  "react-x/no-unnecessary-use-callback": [],
+  "react-x/no-unnecessary-use-memo": [],
+  "react-x/no-unnecessary-use-prefix": [],
+  "react-x/no-unsafe-component-will-mount": [],
+  "react-x/no-unsafe-component-will-receive-props": [],
+  "react-x/no-unsafe-component-will-update": [],
+  "react-x/no-unstable-context-value": [],
+  "react-x/no-unstable-default-props": [],
+  "react-x/no-unused-class-component-members": [],
+  "react-x/no-unused-props": [],
+  "react-x/no-unused-state": [],
+  "react-x/no-use-context": [],
+  "react-x/no-useless-forward-ref": [],
+  "react-x/no-useless-fragment": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowExpressions": {
+          "type": "boolean",
+          "description": "Allow fragments with a single expression child"
+        }
+      }
+    }
+  ],
+  "react-x/prefer-destructuring-assignment": [],
+  "react-x/prefer-namespace-import": [],
+  "react-x/prefer-read-only-props": [],
+  "react-x/prefer-use-state-lazy-initialization": []
+}
+`;

@@ -1,39 +1,39 @@
 # eslint-config-vladpuz-react
 
-> My ESLint config for React
+> Мой ESLint конфиг для React
 
-Features:
+Особенности:
 
-- Supports JavaScript, TypeScript, mixed codebases, and
-  framework/renderer-agnostic React (pure base for use with any framework and
-  renderer!)
-- Auto fix for formatting via
+- Поддерживает JavaScript, TypeScript, смешанные кодовые базы и независимый от
+  фреймворка/рендерера React (чистая основа для использования с любым
+  фреймворком и рендерером!)
+- Авто исправление для форматирования через
   [eslint-stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
-  (targeted for use without Prettier)
-- Doesn't conflict with TypeScript at any tsconfig.json options (TypeScript
-  completely replaces some rules)
-- Ability to customize your own stylistic preferences
-- No warn severity
+  (нацелен на использование без Prettier)
+- Не конфликтует с TypeScript при любых опциях tsconfig.json (TypeScript
+  полностью заменяет некоторые правила)
+- Возможность настроить собственные стилистические предпочтения
+- Нет warn severity
 
-Principles:
+Принципы:
 
-- Safety
-- Consistency
-- Minimal for readability
-- Stability for diff
+- Безопасность
+- Консистентность
+- Минимальность для чтения
+- Стабильность для diff
 
-If you don't need React, use
+Если вам не нужен React, используйте
 [eslint-config-vladpuz](https://github.com/vladpuz/eslint-config-vladpuz).
 
-## Installation
+## Установка
 
 ```shell
 npm install --save-dev eslint eslint-config-vladpuz-react
 ```
 
-## Usage
+## Использование
 
-Create a file `eslint.config.js`:
+Создайте файл `eslint.config.js`:
 
 ```javascript
 import vladpuz from 'eslint-config-vladpuz-react'
@@ -41,9 +41,9 @@ import vladpuz from 'eslint-config-vladpuz-react'
 export default vladpuz()
 ```
 
-If you want to use Prettier for formatting other file types (json, md, html,
-css, ...), disable Prettier for JavaScript and TypeScript files. For this,
-create a file `.prettierignore`:
+Если вы хотите использовать Prettier для форматирования других типов файлов
+(json, md, html, css, ...), отключите Prettier для файлов JavaScript и
+TypeScript. Для этого создайте файл `.prettierignore`:
 
 ```ignore
 # javascript
@@ -59,21 +59,21 @@ create a file `.prettierignore`:
 *.cts
 ```
 
-Run ESLint in check mode:
+Запуск ESLint в режиме проверки:
 
 ```shell
 eslint .
 ```
 
-Run ESLint in fix mode:
+Запуск ESLint в режиме исправления:
 
 ```shell
 eslint --fix .
 ```
 
-## Options
+## Опции
 
-Overview:
+Обзор:
 
 ```typescript
 interface Options {
@@ -95,7 +95,7 @@ Default for js: `FILES_JS`
 
 Default for ts: `FILES_TS`
 
-Override patterns for js and ts files:
+Переопределяют паттерны для js и ts файлов:
 
 ```javascript
 import vladpuz, { FILES_JS, FILES_TS } from 'eslint-config-vladpuz-react'
@@ -113,7 +113,7 @@ Type: `string[]`
 
 Default: `['node', 'browser']`
 
-Overrides environments providing predefined global variables:
+Переопределяет среды предоставляющие предопределенные глобальные переменные:
 
 ```javascript
 import vladpuz from 'eslint-config-vladpuz-react'
@@ -129,7 +129,8 @@ Type: `boolean | StylisticOptions`
 
 Default: `true`
 
-Enables/disables Stylistic or customizes your own stylistic preferences:
+Включает/отключает Stylistic или настраивает ваши собственные стилистические
+предпочтения:
 
 ```javascript
 import vladpuz from 'eslint-config-vladpuz-react'
@@ -152,7 +153,7 @@ Type: `boolean | ParserOptions`
 
 Default: `true`
 
-Enables/disables TypeScript or customizes its parser options.
+Включает/отключает TypeScript или настраивает опции его парсера.
 
 ```javascript
 import vladpuz from 'eslint-config-vladpuz-react'
@@ -176,10 +177,10 @@ Type: `ReactSettings`
 
 Default: `{}`
 
-Details:
+Подробности:
 [Configure Analyzer](https://eslint-react.xyz/docs/configuration/configure-analyzer)
 
-Configures react-x analyzer:
+Настраивает анализатор react-x:
 
 ```javascript
 import vladpuz from 'eslint-config-vladpuz-react'
@@ -200,10 +201,10 @@ Type: `boolean | RefreshOptions`
 
 Default: `true`
 
-Details:
+Подробности:
 [Refresh Options](https://github.com/ArnaudBarre/eslint-plugin-react-refresh?tab=readme-ov-file#options)
 
-Enables/disables or customizes the react-refresh plugin:
+Включает/отключает или настраивает плагин react-refresh:
 
 ```javascript
 import vladpuz from 'eslint-config-vladpuz-react'
@@ -221,18 +222,18 @@ export default vladpuz({
 })
 ```
 
-## Additional
+## Дополнительно
 
 ### errorify(target)
 
-Converts severity of rules `warn`/`1` to `error`/`2`.
+Преобразует severity правил `warn`/`1` в `error`/`2`.
 
 - target (`Linter.Config[] | Linter.Config | Linter.RulesRecord`)
 
 Return: `Linter.Config[] | Linter.Config | Linter.RulesRecord`
 
-Intended for adding external configs while preserving the overall severity style
-(without warn):
+Предназначается для добавления сторонних конфигураций с сохранением общего стиля
+severity (без warn):
 
 ```javascript
 import vladpuz, { errorify } from 'eslint-config-vladpuz-react'
@@ -243,16 +244,15 @@ export default [...vladpuz(), errorify(x.configs.recommended)]
 
 ### getCompilerOptions(parserOptions?, force?)
 
-Gets compiler options from tsconfig.json.
+Получает опции компилятора из tsconfig.json.
 
-- parserOptions (`ParserOptions = {}`) - Parser options for searching
-  tsconfig.json.
-- force (`boolean = false`) - Disables cache.
+- parserOptions (`ParserOptions = {}`) - Опции парсера для поиска tsconfig.json.
+- force (`boolean = false`) - Отключает кеш.
 
 Return: `CompilerOptions`
 
-Intended for dynamic management of rules depending on compiler options from
-tsconfig.json:
+Предназначается для динамического управления правилами в зависимости от опций
+компилятора из tsconfig.json:
 
 ```javascript
 import { getCompilerOptions } from 'eslint-config-vladpuz-react'
@@ -265,16 +265,16 @@ console.log(compilerOptions.noEmit)
 
 ### testPluginConfig(pluginName, pluginRules, config)
 
-Tests plugin config via node:test.
+Тестирует конфиг плагина через node:test.
 
-- pluginName (`string | null`) - Plugin name.
-- pluginRules (`Record<string, Rule.RuleModule>`) - Plugin rules.
-- config (`Linter.Config`) - Tested config.
+- pluginName (`string | null`) - Название плагина.
+- pluginRules (`Record<string, Rule.RuleModule>`) - Правила плагина.
+- config (`Linter.Config`) - Тестируемый конфиг.
 
 Return: `void`
 
-Intended for testing plugin configs inside eslint-config-vladpuz and extended
-configs (e.g.
+Предназначается для тестирования конфигов плагинов внутри eslint-config-vladpuz
+и расширенных конфигурациях (например
 [eslint-config-vladpuz-react/src/configs.test.ts](https://github.com/vladpuz/eslint-config-vladpuz-react/tree/main/src/configs.test.ts)):
 
 ```javascript
@@ -297,20 +297,20 @@ testPluginConfig('@typescript-eslint', tseslint.plugin.rules, {
 
 [Why I don't use Prettier](https://antfu.me/posts/why-not-prettier)
 
-### Why no warn severity?
+### Почему нет warn severity?
 
 [ESLint Warnings Are an Anti-Pattern](https://dev.to/thawkin3/eslint-warnings-are-an-anti-pattern-33np)
 
-### Where is the list of rules?
+### Где список правил?
 
 [src/configs](https://github.com/vladpuz/eslint-config-vladpuz-react/tree/main/src/configs)
 
-## Versioning Policy
+## Политика версионирования
 
-This project follows [Semantic Versioning](https://semver.org). However, since
-this is just a configuration requiring opinions and many changeable components,
-we don't consider rule changes critical.
+Этот проект следует [Semantic Versioning](https://semver.org). Однако, поскольку
+это всего лишь конфигурация, требующая мнений и множества изменяемых
+компонентов, мы не считаем изменения правил критическими.
 
-## See also
+## Смотрите так же
 
 - [prettier-config-vladpuz](https://github.com/vladpuz/prettier-config-vladpuz)

@@ -1,0 +1,53 @@
+{
+  "name": "eslint-config-vladpuz-react",
+  "version": "1.0.0",
+  "description": "My ESLint config for React",
+  "keywords": [
+    "vladpuz",
+    "eslint",
+    "eslintconfig",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladpuz/eslint-config-vladpuz-react.git"
+  },
+  "license": "MIT",
+  "author": "Vladislav Puzyrev",
+  "type": "module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "check": "npm run typecheck && npm run lint && npm run format",
+    "clean": "rimraf build",
+    "format": "prettier --check .",
+    "lint": "eslint .",
+    "prepack": "npm run clean && npm run build && npm run check && npm run test",
+    "prepare": "husky",
+    "test": "node --test --experimental-transform-types",
+    "test-update-snapshots": "node --test --test-update-snapshots --experimental-transform-types",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "eslint-config-vladpuz": "^2.4.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "eslint-plugin-react-x": "^2.0.3"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "^22.0.2",
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/strictest": "^2.0.6",
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.16",
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "prettier-config-vladpuz": "^2.0.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
