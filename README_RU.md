@@ -10,6 +10,7 @@
 - Авто исправление для форматирования через
   [eslint-stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
   (нацелен на использование без Prettier)
+- Поддерживает `.gitignore` по умолчанию
 - Не конфликтует с TypeScript при любых опциях tsconfig.json (TypeScript
   полностью заменяет некоторые правила)
 - Возможность настроить собственные стилистические предпочтения
@@ -80,9 +81,11 @@ interface Options {
   filesJs?: string[] // Default - ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs']
   filesTs?: string[] // Default - ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts']
   env?: Array<keyof typeof globals> // Default - ['node', 'browser']
-  stylistic?: boolean | StylisticOptions // Default - true
+  gitignore?: boolean | GitignoreOptions // Default - true
   typescript?: boolean | ParserOptions // Default - true
-  react?: ReactSettings // Default - {}
+  stylistic?: boolean | StylisticOptions // Default - true
+  react?: ReactSettings // Default - undefined
+  hooks?: HooksSettings // Default - undefined
   refresh?: boolean | RefreshOptions // Default - true
 }
 ```
@@ -123,27 +126,24 @@ export default vladpuz({
 })
 ```
 
-### stylistic
+### gitignore
 
-Type: `boolean | StylisticOptions`
+Type: `boolean | GitignoreOptions`
 
 Default: `true`
 
-Включает/отключает Stylistic или настраивает ваши собственные стилистические
-предпочтения:
+Включает/отключает поддержку `.gitignore` или настраивает опции его поиска.
 
 ```javascript
 import vladpuz from 'eslint-config-vladpuz-react'
 
 export default vladpuz({
-  // Default stylistic config is:
-  stylistic: {
-    indent: 2,
-    quotes: 'single',
-    semi: false,
+  // Default gitignore config is:
+  gitignore: {
+    strict: false,
   },
-  // You can disable stylistic:
-  // stylistic: false,
+  // You can disable gitignore:
+  // gitignore: false,
 })
 ```
 
@@ -171,26 +171,71 @@ export default vladpuz({
 })
 ```
 
+### stylistic
+
+Type: `boolean | StylisticOptions`
+
+Default: `true`
+
+Включает/отключает Stylistic или настраивает ваши собственные стилистические
+предпочтения:
+
+```javascript
+import vladpuz from 'eslint-config-vladpuz-react'
+
+export default vladpuz({
+  // Default stylistic config is:
+  stylistic: {
+    indent: 2,
+    quotes: 'single',
+    semi: false,
+  },
+  // You can disable stylistic:
+  // stylistic: false,
+})
+```
+
 ### react
 
 Type: `ReactSettings`
 
-Default: `{}`
+Default: `undefined`
 
 Подробности:
 [Configure Analyzer](https://eslint-react.xyz/docs/configuration/configure-analyzer)
 
-Настраивает анализатор react-x:
+Настраивает правила react-x:
 
 ```javascript
 import vladpuz from 'eslint-config-vladpuz-react'
 
 export default vladpuz({
   // Example:
-  'react-x': {
-    version: '19.1.0', // Specify the React version for semantic analysis (can be "detect" for auto-detection)
+  react: {
+    version: '19.2.0', // Specify the React version for semantic analysis (can be "detect" for auto-detection)
     importSource: 'react', // Customize the import source for the React module (defaults to "react")
     polymorphicPropName: 'as', // Define the prop name used for polymorphic components (e.g., <Component as="div">)
+  },
+})
+```
+
+### hooks
+
+Type: `HooksSettings`
+
+Default: `undefined`
+
+Подробности: [#34497](https://github.com/facebook/react/pull/34497)
+
+Настраивает правила react-hooks:
+
+```javascript
+import vladpuz from 'eslint-config-vladpuz-react'
+
+export default vladpuz({
+  // Example:
+  hooks: {
+    additionalEffectHooks: '(useMyEffect|useServerEffect)',
   },
 })
 ```

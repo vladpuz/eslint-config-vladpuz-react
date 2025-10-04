@@ -10,17 +10,17 @@ import { getReactRefreshConfig } from './configs/reactRefresh.ts'
 testPluginConfig(
   'react-x',
   react.rules,
-  getReactConfig([]),
+  getReactConfig(),
 )
 
 testPluginConfig(
   'react-hooks',
-  reactHooks.rules,
-  getReactHooksConfig([]),
+  reactHooks.rules ?? {},
+  getReactHooksConfig(),
 )
 
 testPluginConfig(
   'react-refresh',
   reactRefresh.rules,
-  getReactRefreshConfig([], {}),
+  getReactRefreshConfig({}),
 )

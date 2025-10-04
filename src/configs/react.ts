@@ -17,10 +17,9 @@ export const REACT_DISABLED_TS_HANDLED_RULES: Linter.RulesRecord = {
   'react-x/jsx-uses-vars': 'off',
 }
 
-export function getReactConfig(files: string[]): Linter.Config {
+export function getReactConfig(): Linter.Config {
   return {
     name: 'vladpuz/react',
-    files,
     plugins: {
       'react-x': react,
     },
@@ -60,8 +59,8 @@ export function getReactConfig(files: string[]): Linter.Config {
       'react-x/no-missing-context-display-name': 'error',
       'react-x/no-missing-key': 'error',
       'react-x/no-misused-capture-owner-stack': 'off',
-      'react-x/no-nested-component-definitions': 'error',
-      'react-x/no-nested-lazy-component-declarations': 'error',
+      'react-x/no-nested-component-definitions': 'off',
+      'react-x/no-nested-lazy-component-declarations': 'off',
       'react-x/no-prop-types': 'error',
       'react-x/no-redundant-should-component-update': 'error',
       'react-x/no-set-state-in-component-did-mount': 'error',

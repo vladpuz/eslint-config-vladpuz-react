@@ -1,5 +1,35 @@
 exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been changed 1`] = `
 {
+  "react-hooks/automatic-effect-dependencies": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/capitalized-calls": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/component-hook-factories": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/config": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/error-boundaries": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
   "react-hooks/exhaustive-deps": [
     {
       "type": "object",
@@ -11,8 +41,154 @@ exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been cha
         },
         "enableDangerousAutofixThisMayCauseInfiniteLoops": {
           "type": "boolean"
+        },
+        "experimental_autoDependenciesHooks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requireExplicitEffectDeps": {
+          "type": "boolean"
         }
       }
+    }
+  ],
+  "react-hooks/fbt": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/fire": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/gating": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/globals": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/hooks": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/immutability": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/incompatible-library": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/invariant": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/memoized-effect-dependencies": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/no-deriving-state-in-effects": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/preserve-manual-memoization": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/purity": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/refs": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/rule-suppression": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/rules-of-hooks": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "additionalHooks": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "react-hooks/set-state-in-effect": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/set-state-in-render": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/static-components": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/syntax": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/todo": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/unsupported-syntax": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/use-memo": [
+    {
+      "type": "object",
+      "additionalProperties": true
     }
   ]
 }

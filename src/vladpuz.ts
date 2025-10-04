@@ -9,10 +9,15 @@ import { getReactRefreshConfig } from './configs/reactRefresh.js'
 
 export interface ReactOptions extends Omit<Options, 'jsx'> {
   react?: ReactSettings
+  hooks?: HooksSettings
   refresh?: boolean | RefreshOptions
 }
 
 export type ReactSettings = Partial<ESLintReactSettingsNormalized>
+
+export interface HooksSettings {
+  additionalEffectHooks?: string
+}
 
 export interface RefreshOptions {
   allowExportNames?: string[]
@@ -26,26 +31,25 @@ function vladpuz(options: ReactOptions = {}): Linter.Config[] {
     filesJs = FILES_JS,
     filesTs = FILES_TS,
     env = ['node', 'browser'],
-    stylistic = true,
+    gitignore = true,
     typescript = true,
+    stylistic = true,
     react,
+    hooks,
     refresh = true,
   } = options
-
-  const filesJsAndTs = (typescript !== false)
-    ? [...filesJs, ...filesTs]
-    : filesJs
 
   const config = vladpuzBase({
     filesJs,
     filesTs,
     env,
-    stylistic,
+    gitignore,
     typescript,
+    stylistic,
     jsx: true,
   })
 
-  const reactConfig = getReactConfig(filesJsAndTs)
+  const reactConfig = getReactConfig()
   config.push(reactConfig)
 
   if (react != null) {
@@ -73,12 +77,18 @@ function vladpuz(options: ReactOptions = {}): Linter.Config[] {
     })
   }
 
-  const hooksConfig = getReactHooksConfig(filesJsAndTs)
+  const hooksConfig = getReactHooksConfig()
   config.push(hooksConfig)
+
+  if (hooks != null) {
+    hooksConfig.settings = {
+      'react-hooks': hooks,
+    }
+  }
 
   if (refresh !== false) {
     const refreshOptions = (typeof refresh === 'object') ? refresh : {}
-    const refreshConfig = getReactRefreshConfig(filesJsAndTs, refreshOptions)
+    const refreshConfig = getReactRefreshConfig(refreshOptions)
     config.push(refreshConfig)
   }
 
