@@ -37,6 +37,7 @@ export function getReactHooksConfig(): Linter.Config {
       'react-hooks/todo': 'off',
       'react-hooks/unsupported-syntax': 'error',
       'react-hooks/use-memo': 'error',
+      'react-hooks/void-use-memo': 'off',
     },
   }
 }

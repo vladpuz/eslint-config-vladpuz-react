@@ -190,6 +190,12 @@ exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been cha
       "type": "object",
       "additionalProperties": true
     }
+  ],
+  "react-hooks/void-use-memo": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
   ]
 }
 `;
@@ -273,6 +279,7 @@ exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed
   "react-x/no-forbidden-props": [
     {
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "forbid": {
           "type": "array",

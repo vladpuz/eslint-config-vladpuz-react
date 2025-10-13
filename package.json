@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-vladpuz-react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "My ESLint config for React",
   "keywords": [
     "vladpuz",
@@ -31,16 +31,16 @@
   },
   "dependencies": {
     "eslint-config-vladpuz": "^2.5.0",
-    "eslint-plugin-react-hooks": "^6.1.1",
+    "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-react-refresh": "^0.4.23",
-    "eslint-plugin-react-x": "^2.0.6"
+    "eslint-plugin-react-x": "^2.1.1"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^22.0.2",
     "@tsconfig/node-ts": "^23.6.1",
     "@tsconfig/strictest": "^2.0.6",
-    "@types/node": "^24.6.2",
-    "@types/react": "^19.2.0",
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.2.2",
     "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "prettier-config-vladpuz": "^2.0.0",

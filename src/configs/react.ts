@@ -2,14 +2,14 @@ import type { Linter } from 'eslint'
 
 import react from 'eslint-plugin-react-x'
 
-// https://eslint-react.xyz/docs/configuration/configure-project-config#type-information
+// https://github.com/Rel1cx/eslint-react/blob/ad42ab5a5dbd990096013ee9a66968923700100e/packages/plugins/eslint-plugin-react-x/src/configs/disable-type-checked.ts
 export const REACT_DISABLED_TYPE_CHECKED_RULES: Linter.RulesRecord = {
   'react-x/no-leaked-conditional-rendering': 'off',
   'react-x/no-unused-props': 'off',
   'react-x/prefer-read-only-props': 'off',
 }
 
-// https://github.com/Rel1cx/eslint-react/blob/main/packages/plugins/eslint-plugin-react-x/src/configs/recommended-typescript.ts
+// https://github.com/Rel1cx/eslint-react/blob/ad42ab5a5dbd990096013ee9a66968923700100e/packages/plugins/eslint-plugin-react-x/src/configs/_ts.ts
 export const REACT_DISABLED_TS_HANDLED_RULES: Linter.RulesRecord = {
   'react-x/jsx-no-duplicate-props': 'off',
   'react-x/jsx-no-undef': 'off',
