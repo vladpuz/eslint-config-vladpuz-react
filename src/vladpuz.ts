@@ -3,9 +3,9 @@ import type { Linter } from 'eslint'
 
 import vladpuzBase, { FILES_JS, FILES_TS, type Options } from 'eslint-config-vladpuz'
 
-import { getReactConfig, REACT_DISABLED_TS_HANDLED_RULES, REACT_DISABLED_TYPE_CHECKED_RULES } from './configs/react.js'
-import { getReactHooksConfig } from './configs/reactHooks.js'
-import { getReactRefreshConfig } from './configs/reactRefresh.js'
+import { getReactConfig, REACT_DISABLED_TS_HANDLED_RULES, REACT_DISABLED_TYPE_CHECKED_RULES } from './configs/react.ts'
+import { getReactHooksConfig } from './configs/reactHooks.ts'
+import { getReactRefreshConfig } from './configs/reactRefresh.ts'
 
 export interface ReactOptions extends Omit<Options, 'jsx'> {
   react?: ReactSettings
@@ -52,7 +52,7 @@ function vladpuz(options: ReactOptions = {}): Linter.Config[] {
   const reactConfig = getReactConfig()
   config.push(reactConfig)
 
-  if (react != null) {
+  if (react) {
     reactConfig.settings = {
       'react-x': react,
     }
@@ -80,7 +80,7 @@ function vladpuz(options: ReactOptions = {}): Linter.Config[] {
   const hooksConfig = getReactHooksConfig()
   config.push(hooksConfig)
 
-  if (hooks != null) {
+  if (hooks) {
     hooksConfig.settings = {
       'react-hooks': hooks,
     }

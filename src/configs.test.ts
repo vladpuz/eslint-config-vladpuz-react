@@ -15,7 +15,7 @@ testPluginConfig(
 
 testPluginConfig(
   'react-hooks',
-  reactHooks.rules ?? {},
+  reactHooks.rules,
   getReactHooksConfig(),
 )
 

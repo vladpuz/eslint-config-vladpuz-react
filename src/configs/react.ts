@@ -24,6 +24,7 @@ export function getReactConfig(): Linter.Config {
       'react-x': react,
     },
     rules: {
+      'react-x/jsx-dollar': 'off',
       'react-x/jsx-key-before-spread': 'error',
       'react-x/jsx-no-comment-textnodes': 'error',
       'react-x/jsx-no-duplicate-props': 'error',
@@ -51,7 +52,6 @@ export function getReactConfig(): Linter.Config {
       'react-x/no-default-props': 'error',
       'react-x/no-direct-mutation-state': 'error',
       'react-x/no-duplicate-key': 'error',
-      'react-x/no-forbidden-props': 'off',
       'react-x/no-forward-ref': 'error',
       'react-x/no-implicit-key': 'error',
       'react-x/no-leaked-conditional-rendering': 'error',

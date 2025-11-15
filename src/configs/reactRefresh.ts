@@ -2,7 +2,7 @@ import type { Linter } from 'eslint'
 
 import reactRefresh from 'eslint-plugin-react-refresh'
 
-import type { RefreshOptions } from '../vladpuz.js'
+import type { RefreshOptions } from '../vladpuz.ts'
 
 export function getReactRefreshConfig(
   options: RefreshOptions,

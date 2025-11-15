@@ -6,6 +6,7 @@ export function getReactHooksConfig(): Linter.Config {
   return {
     name: 'vladpuz/react-hooks',
     plugins: {
+      // @ts-expect-error: plugin
       'react-hooks': reactHooks,
     },
     rules: {

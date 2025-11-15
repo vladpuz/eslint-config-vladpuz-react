@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-vladpuz-react",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "My ESLint config for React",
   "keywords": [
     "vladpuz",
@@ -25,26 +25,26 @@
     "lint": "eslint .",
     "prepack": "npm run clean && npm run build && npm run check && npm run test",
     "prepare": "husky",
-    "test": "node --test --experimental-transform-types",
-    "test-update-snapshots": "node --test --test-update-snapshots --experimental-transform-types",
+    "test": "node --test",
+    "test-update-snapshots": "node --test --test-update-snapshots",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "eslint-config-vladpuz": "^2.5.0",
-    "eslint-plugin-react-hooks": "^7.0.0",
-    "eslint-plugin-react-refresh": "^0.4.23",
-    "eslint-plugin-react-x": "^2.1.1"
+    "eslint-config-vladpuz": "^2.5.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "eslint-plugin-react-x": "^2.3.5"
   },
   "devDependencies": {
-    "@tsconfig/node-lts": "^22.0.2",
-    "@tsconfig/node-ts": "^23.6.1",
-    "@tsconfig/strictest": "^2.0.6",
-    "@types/node": "^24.7.2",
-    "@types/react": "^19.2.2",
+    "@tsconfig/node-lts": "^22.0.3",
+    "@tsconfig/node-ts": "^23.6.2",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
     "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "prettier-config-vladpuz": "^2.0.0",
-    "rimraf": "^6.0.1",
+    "rimraf": "^6.1.0",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
