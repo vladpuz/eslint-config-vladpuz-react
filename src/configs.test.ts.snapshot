@@ -1,18 +1,6 @@
 exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been changed 1`] = `
 {
-  "react-hooks/automatic-effect-dependencies": [
-    {
-      "type": "object",
-      "additionalProperties": true
-    }
-  ],
   "react-hooks/capitalized-calls": [
-    {
-      "type": "object",
-      "additionalProperties": true
-    }
-  ],
-  "react-hooks/component-hook-factories": [
     {
       "type": "object",
       "additionalProperties": true
@@ -54,13 +42,13 @@ exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been cha
       }
     }
   ],
-  "react-hooks/fbt": [
+  "react-hooks/exhaustive-effect-dependencies": [
     {
       "type": "object",
       "additionalProperties": true
     }
   ],
-  "react-hooks/fire": [
+  "react-hooks/fbt": [
     {
       "type": "object",
       "additionalProperties": true
@@ -97,6 +85,12 @@ exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been cha
     }
   ],
   "react-hooks/invariant": [
+    {
+      "type": "object",
+      "additionalProperties": true
+    }
+  ],
+  "react-hooks/memo-dependencies": [
     {
       "type": "object",
       "additionalProperties": true
@@ -200,12 +194,46 @@ exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been cha
 }
 `;
 
+exports[`Plugin \"react-jsx\" config > Snapshot of the schema has not been changed 1`] = `
+{
+  "react-jsx/no-children-prop": [],
+  "react-jsx/no-children-prop-with-children": [],
+  "react-jsx/no-comment-textnodes": [],
+  "react-jsx/no-key-after-spread": [],
+  "react-jsx/no-leaked-dollar": [],
+  "react-jsx/no-leaked-semicolon": [],
+  "react-jsx/no-namespace": [],
+  "react-jsx/no-useless-fragment": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowEmptyFragment": {
+          "type": "boolean",
+          "description": "Allow empty fragments"
+        },
+        "allowExpressions": {
+          "type": "boolean",
+          "description": "Allow fragments with a single expression child"
+        }
+      }
+    }
+  ]
+}
+`;
+
 exports[`Plugin \"react-refresh\" config > Snapshot of the schema has not been changed 1`] = `
 {
   "react-refresh/only-export-components": [
     {
       "type": "object",
       "properties": {
+        "extraHOCs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "allowExportNames": {
           "type": "array",
           "items": {
@@ -214,12 +242,6 @@ exports[`Plugin \"react-refresh\" config > Snapshot of the schema has not been c
         },
         "allowConstantExport": {
           "type": "boolean"
-        },
-        "customHOCs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
         },
         "checkJS": {
           "type": "boolean"
@@ -233,39 +255,39 @@ exports[`Plugin \"react-refresh\" config > Snapshot of the schema has not been c
 
 exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed 1`] = `
 {
-  "react-x/jsx-dollar": [],
-  "react-x/jsx-key-before-spread": [],
-  "react-x/jsx-no-comment-textnodes": [],
-  "react-x/jsx-no-duplicate-props": [],
-  "react-x/jsx-no-iife": [],
-  "react-x/jsx-no-undef": [],
-  "react-x/jsx-shorthand-boolean": [
+  "react-x/component-hook-factories": [],
+  "react-x/error-boundaries": [],
+  "react-x/exhaustive-deps": [
     {
-      "type": "integer",
-      "enum": [
-        -1,
-        1
-      ]
+      "type": "object",
+      "additionalProperties": false,
+      "enableDangerousAutofixThisMayCauseInfiniteLoops": false,
+      "properties": {
+        "additionalHooks": {
+          "type": "string"
+        },
+        "enableDangerousAutofixThisMayCauseInfiniteLoops": {
+          "type": "boolean"
+        },
+        "experimental_autoDependenciesHooks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requireExplicitEffectDeps": {
+          "type": "boolean"
+        }
+      }
     }
   ],
-  "react-x/jsx-shorthand-fragment": [
-    {
-      "type": "integer",
-      "enum": [
-        -1,
-        1
-      ]
-    }
-  ],
-  "react-x/jsx-uses-react": [],
-  "react-x/jsx-uses-vars": [],
+  "react-x/immutability": [],
   "react-x/no-access-state-in-setstate": [],
   "react-x/no-array-index-key": [],
   "react-x/no-children-count": [],
   "react-x/no-children-for-each": [],
   "react-x/no-children-map": [],
   "react-x/no-children-only": [],
-  "react-x/no-children-prop": [],
   "react-x/no-children-to-array": [],
   "react-x/no-class-component": [],
   "react-x/no-clone-element": [],
@@ -274,67 +296,12 @@ exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed
   "react-x/no-component-will-update": [],
   "react-x/no-context-provider": [],
   "react-x/no-create-ref": [],
-  "react-x/no-default-props": [],
   "react-x/no-direct-mutation-state": [],
   "react-x/no-duplicate-key": [],
-  "react-x/no-forbidden-props": [
-    {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "forbid": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "excludedNodes": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "uniqueItems": true
-                  },
-                  "prop": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "prop"
-                ]
-              },
-              {
-                "type": "object",
-                "additionalProperties": false,
-                "properties": {
-                  "includedNodes": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "uniqueItems": true
-                  },
-                  "prop": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "prop"
-                ]
-              }
-            ]
-          }
-        }
-      }
-    }
-  ],
   "react-x/no-forward-ref": [],
+  "react-x/no-implicit-children": [],
   "react-x/no-implicit-key": [],
+  "react-x/no-implicit-ref": [],
   "react-x/no-leaked-conditional-rendering": [],
   "react-x/no-missing-component-display-name": [],
   "react-x/no-missing-context-display-name": [],
@@ -342,13 +309,10 @@ exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed
   "react-x/no-misused-capture-owner-stack": [],
   "react-x/no-nested-component-definitions": [],
   "react-x/no-nested-lazy-component-declarations": [],
-  "react-x/no-prop-types": [],
   "react-x/no-redundant-should-component-update": [],
   "react-x/no-set-state-in-component-did-mount": [],
   "react-x/no-set-state-in-component-did-update": [],
   "react-x/no-set-state-in-component-will-update": [],
-  "react-x/no-string-refs": [],
-  "react-x/no-unnecessary-key": [],
   "react-x/no-unnecessary-use-callback": [],
   "react-x/no-unnecessary-use-memo": [],
   "react-x/no-unnecessary-use-prefix": [],
@@ -374,22 +338,44 @@ exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed
   "react-x/no-unused-props": [],
   "react-x/no-unused-state": [],
   "react-x/no-use-context": [],
-  "react-x/no-useless-forward-ref": [],
-  "react-x/no-useless-fragment": [
+  "react-x/prefer-destructuring-assignment": [],
+  "react-x/prefer-namespace-import": [],
+  "react-x/purity": [],
+  "react-x/refs": [],
+  "react-x/rules-of-hooks": [
     {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "allowExpressions": {
-          "type": "boolean",
-          "description": "Allow fragments with a single expression child"
+        "additionalHooks": {
+          "type": "string"
         }
       }
     }
   ],
-  "react-x/prefer-destructuring-assignment": [],
-  "react-x/prefer-namespace-import": [],
-  "react-x/prefer-read-only-props": [],
-  "react-x/prefer-use-state-lazy-initialization": []
+  "react-x/set-state-in-effect": [],
+  "react-x/set-state-in-render": [],
+  "react-x/unsupported-syntax": [],
+  "react-x/use-memo": [],
+  "react-x/use-state": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enforceAssignment": {
+          "type": "boolean",
+          "default": true
+        },
+        "enforceLazyInitialization": {
+          "type": "boolean",
+          "default": true
+        },
+        "enforceSetterName": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  ]
 }
 `;

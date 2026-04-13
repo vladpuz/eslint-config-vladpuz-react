@@ -1,9 +1,12 @@
 import type { ESLintReactSettingsNormalized } from '@eslint-react/shared'
 import type { Linter } from 'eslint'
+import type { OnlyExportComponentsOptions } from 'eslint-plugin-react-refresh'
 
 import vladpuzBase, { FILES_JS, FILES_TS, type Options } from 'eslint-config-vladpuz'
+import react from 'eslint-plugin-react-x'
 
-import { getReactConfig, REACT_DISABLED_TS_HANDLED_RULES, REACT_DISABLED_TYPE_CHECKED_RULES } from './configs/react.ts'
+import { getJsxConfig } from './configs/jsx.ts'
+import { getReactConfig } from './configs/react.ts'
 import { getReactHooksConfig } from './configs/reactHooks.ts'
 import { getReactRefreshConfig } from './configs/reactRefresh.ts'
 
@@ -19,24 +22,19 @@ export interface HooksSettings {
   additionalEffectHooks?: string
 }
 
-export interface RefreshOptions {
-  allowExportNames?: string[]
-  allowConstantExport?: boolean
-  customHOCs?: string[]
-  checkJS?: boolean
-}
+export type RefreshOptions = OnlyExportComponentsOptions
 
 function vladpuz(options: ReactOptions = {}): Linter.Config[] {
   const {
     filesJs = FILES_JS,
     filesTs = FILES_TS,
-    env = ['node', 'browser'],
+    env = ['builtin', 'node', 'browser'],
     gitignore = true,
     typescript = true,
     stylistic = true,
-    react,
-    hooks,
-    refresh = true,
+    react: reactSettings,
+    hooks: hooksSettings,
+    refresh: enableRefresh = true,
   } = options
 
   const config = vladpuzBase({
@@ -49,45 +47,67 @@ function vladpuz(options: ReactOptions = {}): Linter.Config[] {
     jsx: true,
   })
 
+  const jsxConfig = getJsxConfig()
+  config.push(jsxConfig)
+
   const reactConfig = getReactConfig()
   config.push(reactConfig)
 
-  if (react) {
+  if (reactSettings) {
     reactConfig.settings = {
-      'react-x': react,
+      'react-x': reactSettings,
     }
   }
+
+  const disabledTsRules = react.configs['disable-type-checked'].rules ?? {}
 
   if (typescript === false) {
     reactConfig.rules = {
       ...reactConfig.rules,
-      ...REACT_DISABLED_TYPE_CHECKED_RULES,
+      ...disabledTsRules,
     }
   } else {
-    config.push({
-      name: 'vladpuz/react-js',
-      files: filesJs,
-      rules: REACT_DISABLED_TYPE_CHECKED_RULES,
-    })
+    const recommendedRules = react.configs['recommended-typescript'].rules ?? {}
+    const disabledTsHandledRules: Linter.RulesRecord = {}
 
-    config.push({
-      name: 'vladpuz/react-ts',
-      files: filesTs,
-      rules: REACT_DISABLED_TS_HANDLED_RULES,
-    })
+    for (const [ruleName, ruleConfig] of Object.entries(recommendedRules)) {
+      const ruleSeverity = Array.isArray(ruleConfig)
+        ? ruleConfig[0]
+        : ruleConfig
+
+      if (ruleSeverity === 'off' || ruleSeverity === 0) {
+        disabledTsHandledRules[ruleName] = 'off'
+      }
+    }
+
+    config.push(
+      {
+        name: 'vladpuz/react-js',
+        files: filesJs,
+        rules: disabledTsRules,
+      },
+      {
+        name: 'vladpuz/react-ts',
+        files: filesTs,
+        rules: disabledTsHandledRules,
+      },
+    )
   }
 
   const hooksConfig = getReactHooksConfig()
   config.push(hooksConfig)
 
-  if (hooks) {
+  if (hooksSettings) {
     hooksConfig.settings = {
-      'react-hooks': hooks,
+      'react-hooks': hooksSettings,
     }
   }
 
-  if (refresh !== false) {
-    const refreshOptions = (typeof refresh === 'object') ? refresh : {}
+  if (enableRefresh !== false) {
+    const refreshOptions = (typeof enableRefresh === 'object')
+      ? enableRefresh
+      : {}
+
     const refreshConfig = getReactRefreshConfig(refreshOptions)
     config.push(refreshConfig)
   }

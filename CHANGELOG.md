@@ -1,3 +1,18 @@
+## 2.0.0
+
+- Updated eslint-config-vladpuz from v2 to v4. Main changes:
+  - ESLint 10 support.
+  - TypeScript 6 support.
+  - Added plugin
+    [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn).
+  - Removed plugins
+    [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
+    and [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n).
+  - Full list of changes:
+    https://github.com/vladpuz/eslint-config-vladpuz/releases.
+- Updated eslint-plugin-react-x from v2 to v4.
+- Updated eslint-plugin-react-refresh to v0.5.
+
 ## 1.1.0
 
 - Added new rules from

@@ -1,6 +1,6 @@
 # eslint-config-vladpuz-react
 
-> Мой ESLint конфиг для React
+> My ESLint config for React
 
 Особенности:
 
@@ -10,11 +10,13 @@
 - Авто исправление для форматирования через
   [eslint-stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
   (нацелен на использование без Prettier)
-- Поддерживает `.gitignore` по умолчанию
 - Не конфликтует с TypeScript при любых опциях tsconfig.json (TypeScript
   полностью заменяет некоторые правила)
+- Поддерживает `.gitignore` по умолчанию
 - Возможность настроить собственные стилистические предпочтения
-- Нет warn severity
+- Не использует другие готовые конфигурации, все правила рассмотрены вручную
+  (кроме stylistic, используется кастомизированный пресет)
+- Нет warn severity, только error
 
 Принципы:
 
@@ -80,7 +82,7 @@ eslint --fix .
 interface Options {
   filesJs?: string[] // Default - ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs']
   filesTs?: string[] // Default - ['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts']
-  env?: Array<keyof typeof globals> // Default - ['node', 'browser']
+  env?: Array<keyof typeof globals> // Default - ['builtin', 'node', 'browser']
   gitignore?: boolean | GitignoreOptions // Default - true
   typescript?: boolean | ParserOptions // Default - true
   stylistic?: boolean | StylisticOptions // Default - true
@@ -94,9 +96,9 @@ interface Options {
 
 Type: `string[]`
 
-Default for js: `FILES_JS`
+Default for js: `['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs']`
 
-Default for ts: `FILES_TS`
+Default for ts: `['**/*.ts', '**/*.tsx', '**/*.mts', '**/*.cts']`
 
 Переопределяют паттерны для js и ts файлов:
 
@@ -114,7 +116,7 @@ export default vladpuz({
 
 Type: `string[]`
 
-Default: `['node', 'browser']`
+Default: `['builtin', 'node', 'browser']`
 
 Переопределяет среды предоставляющие предопределенные глобальные переменные:
 
@@ -308,13 +310,16 @@ console.log(compilerOptions.strict)
 console.log(compilerOptions.noEmit)
 ```
 
-### testPluginConfig(pluginName, pluginRules, config)
+### testPluginConfig(pluginName, pluginRules, config, recommendedRules?)
 
 Тестирует конфиг плагина через node:test.
 
 - pluginName (`string | null`) - Название плагина.
 - pluginRules (`Record<string, Rule.RuleModule>`) - Правила плагина.
 - config (`Linter.Config`) - Тестируемый конфиг.
+- recommendedRules (`Partial<Linter.RulesRecord> = {}`) - Пресет рекомендуемых
+  плагином правил. Выдаст ошибку если хотя бы одно рекомендуемое правило
+  выключено в тестируемой конфигурации.
 
 Return: `void`
 
@@ -324,16 +329,22 @@ Return: `void`
 
 ```javascript
 import { testPluginConfig } from 'eslint-config-vladpuz-react'
-import tseslint from 'typescript-eslint'
+import unicorn from 'eslint-plugin-unicorn'
 
-testPluginConfig('@typescript-eslint', tseslint.plugin.rules, {
-  name: 'vladpuz/typescript',
-  files: [],
-  plugins: {
-    '@typescript-eslint': tseslint.plugin,
+testPluginConfig(
+  'unicorn',
+  unicorn.rules ?? {},
+  {
+    name: 'vladpuz/unicorn',
+    plugins: {
+      unicorn,
+    },
+    rules: {
+      // ...
+    },
   },
-  rules: {},
-})
+  unicorn.configs.unopinionated.rules ?? {},
+)
 ```
 
 ## FAQ
@@ -358,4 +369,5 @@ testPluginConfig('@typescript-eslint', tseslint.plugin.rules, {
 
 ## Смотрите так же
 
+- [eslint-config-vladpuz](https://github.com/vladpuz/eslint-config-vladpuz)
 - [prettier-config-vladpuz](https://github.com/vladpuz/prettier-config-vladpuz)
