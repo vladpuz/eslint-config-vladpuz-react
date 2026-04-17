@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Updated eslint-plugin-react-hooks to `^7.1.0`.
+
 ## 2.0.0
 
 - Updated eslint-config-vladpuz from v2 to v4. Main changes:
