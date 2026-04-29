@@ -1,3 +1,7 @@
+## 2.1.0
+
+- Updated eslint-plugin-react-x to v5.
+
 ## 2.0.1
 
 - Updated eslint-plugin-react-hooks to `^7.1.0`.

@@ -6,6 +6,7 @@ exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been cha
       "additionalProperties": true
     }
   ],
+  "react-hooks/component-hook-factories": [],
   "react-hooks/config": [
     {
       "type": "object",
@@ -255,7 +256,6 @@ exports[`Plugin \"react-refresh\" config > Snapshot of the schema has not been c
 
 exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed 1`] = `
 {
-  "react-x/component-hook-factories": [],
   "react-x/error-boundaries": [],
   "react-x/exhaustive-deps": [
     {
@@ -281,6 +281,7 @@ exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed
       }
     }
   ],
+  "react-x/globals": [],
   "react-x/immutability": [],
   "react-x/no-access-state-in-setstate": [],
   "react-x/no-array-index-key": [],
@@ -309,12 +310,9 @@ exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed
   "react-x/no-misused-capture-owner-stack": [],
   "react-x/no-nested-component-definitions": [],
   "react-x/no-nested-lazy-component-declarations": [],
-  "react-x/no-redundant-should-component-update": [],
   "react-x/no-set-state-in-component-did-mount": [],
   "react-x/no-set-state-in-component-did-update": [],
   "react-x/no-set-state-in-component-will-update": [],
-  "react-x/no-unnecessary-use-callback": [],
-  "react-x/no-unnecessary-use-memo": [],
   "react-x/no-unnecessary-use-prefix": [],
   "react-x/no-unsafe-component-will-mount": [],
   "react-x/no-unsafe-component-will-receive-props": [],
@@ -336,10 +334,7 @@ exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed
   ],
   "react-x/no-unused-class-component-members": [],
   "react-x/no-unused-props": [],
-  "react-x/no-unused-state": [],
   "react-x/no-use-context": [],
-  "react-x/prefer-destructuring-assignment": [],
-  "react-x/prefer-namespace-import": [],
   "react-x/purity": [],
   "react-x/refs": [],
   "react-x/rules-of-hooks": [
@@ -355,6 +350,7 @@ exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed
   ],
   "react-x/set-state-in-effect": [],
   "react-x/set-state-in-render": [],
+  "react-x/static-components": [],
   "react-x/unsupported-syntax": [],
   "react-x/use-memo": [],
   "react-x/use-state": [
