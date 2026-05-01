@@ -1,3 +1,191 @@
+exports[`Plugin \"@eslint-react\" config > Snapshot of the schema has not been changed 1`] = `
+{
+  "@eslint-react/dom-no-dangerously-set-innerhtml": [],
+  "@eslint-react/dom-no-dangerously-set-innerhtml-with-children": [],
+  "@eslint-react/dom-no-find-dom-node": [],
+  "@eslint-react/dom-no-flush-sync": [],
+  "@eslint-react/dom-no-hydrate": [],
+  "@eslint-react/dom-no-missing-button-type": [],
+  "@eslint-react/dom-no-missing-iframe-sandbox": [],
+  "@eslint-react/dom-no-render": [],
+  "@eslint-react/dom-no-render-return-value": [],
+  "@eslint-react/dom-no-script-url": [],
+  "@eslint-react/dom-no-string-style-prop": [],
+  "@eslint-react/dom-no-unknown-property": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ignore": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requireDataLowercase": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  ],
+  "@eslint-react/dom-no-unsafe-iframe-sandbox": [],
+  "@eslint-react/dom-no-unsafe-target-blank": [],
+  "@eslint-react/dom-no-use-form-state": [],
+  "@eslint-react/dom-no-void-elements-with-children": [],
+  "@eslint-react/error-boundaries": [],
+  "@eslint-react/exhaustive-deps": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "enableDangerousAutofixThisMayCauseInfiniteLoops": false,
+      "properties": {
+        "additionalHooks": {
+          "type": "string"
+        },
+        "enableDangerousAutofixThisMayCauseInfiniteLoops": {
+          "type": "boolean"
+        },
+        "experimental_autoDependenciesHooks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requireExplicitEffectDeps": {
+          "type": "boolean"
+        }
+      }
+    }
+  ],
+  "@eslint-react/globals": [],
+  "@eslint-react/immutability": [],
+  "@eslint-react/jsx-no-children-prop": [],
+  "@eslint-react/jsx-no-children-prop-with-children": [],
+  "@eslint-react/jsx-no-comment-textnodes": [],
+  "@eslint-react/jsx-no-key-after-spread": [],
+  "@eslint-react/jsx-no-leaked-dollar": [],
+  "@eslint-react/jsx-no-leaked-semicolon": [],
+  "@eslint-react/jsx-no-namespace": [],
+  "@eslint-react/jsx-no-useless-fragment": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowEmptyFragment": {
+          "type": "boolean",
+          "description": "Allow empty fragments"
+        },
+        "allowExpressions": {
+          "type": "boolean",
+          "description": "Allow fragments with a single expression child"
+        }
+      }
+    }
+  ],
+  "@eslint-react/naming-convention-context-name": [],
+  "@eslint-react/naming-convention-id-name": [],
+  "@eslint-react/naming-convention-ref-name": [],
+  "@eslint-react/no-access-state-in-setstate": [],
+  "@eslint-react/no-array-index-key": [],
+  "@eslint-react/no-children-count": [],
+  "@eslint-react/no-children-for-each": [],
+  "@eslint-react/no-children-map": [],
+  "@eslint-react/no-children-only": [],
+  "@eslint-react/no-children-to-array": [],
+  "@eslint-react/no-class-component": [],
+  "@eslint-react/no-clone-element": [],
+  "@eslint-react/no-component-will-mount": [],
+  "@eslint-react/no-component-will-receive-props": [],
+  "@eslint-react/no-component-will-update": [],
+  "@eslint-react/no-context-provider": [],
+  "@eslint-react/no-create-ref": [],
+  "@eslint-react/no-direct-mutation-state": [],
+  "@eslint-react/no-duplicate-key": [],
+  "@eslint-react/no-forward-ref": [],
+  "@eslint-react/no-implicit-children": [],
+  "@eslint-react/no-implicit-key": [],
+  "@eslint-react/no-implicit-ref": [],
+  "@eslint-react/no-leaked-conditional-rendering": [],
+  "@eslint-react/no-missing-component-display-name": [],
+  "@eslint-react/no-missing-context-display-name": [],
+  "@eslint-react/no-missing-key": [],
+  "@eslint-react/no-misused-capture-owner-stack": [],
+  "@eslint-react/no-nested-component-definitions": [],
+  "@eslint-react/no-nested-lazy-component-declarations": [],
+  "@eslint-react/no-set-state-in-component-did-mount": [],
+  "@eslint-react/no-set-state-in-component-did-update": [],
+  "@eslint-react/no-set-state-in-component-will-update": [],
+  "@eslint-react/no-unnecessary-use-prefix": [],
+  "@eslint-react/no-unsafe-component-will-mount": [],
+  "@eslint-react/no-unsafe-component-will-receive-props": [],
+  "@eslint-react/no-unsafe-component-will-update": [],
+  "@eslint-react/no-unstable-context-value": [],
+  "@eslint-react/no-unstable-default-props": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "safeDefaultProps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "@eslint-react/no-unused-class-component-members": [],
+  "@eslint-react/no-unused-props": [],
+  "@eslint-react/no-unused-state": [],
+  "@eslint-react/no-use-context": [],
+  "@eslint-react/purity": [],
+  "@eslint-react/refs": [],
+  "@eslint-react/rsc-function-definition": [],
+  "@eslint-react/rules-of-hooks": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "additionalHooks": {
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "@eslint-react/set-state-in-effect": [],
+  "@eslint-react/set-state-in-render": [],
+  "@eslint-react/static-components": [],
+  "@eslint-react/unsupported-syntax": [],
+  "@eslint-react/use-memo": [],
+  "@eslint-react/use-state": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enforceAssignment": {
+          "type": "boolean",
+          "default": true
+        },
+        "enforceLazyInitialization": {
+          "type": "boolean",
+          "default": true
+        },
+        "enforceSetterName": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  ],
+  "@eslint-react/web-api-no-leaked-event-listener": [],
+  "@eslint-react/web-api-no-leaked-fetch": [],
+  "@eslint-react/web-api-no-leaked-interval": [],
+  "@eslint-react/web-api-no-leaked-resize-observer": [],
+  "@eslint-react/web-api-no-leaked-timeout": []
+}
+`;
+
 exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been changed 1`] = `
 {
   "react-hooks/capitalized-calls": [
@@ -195,34 +383,6 @@ exports[`Plugin \"react-hooks\" config > Snapshot of the schema has not been cha
 }
 `;
 
-exports[`Plugin \"react-jsx\" config > Snapshot of the schema has not been changed 1`] = `
-{
-  "react-jsx/no-children-prop": [],
-  "react-jsx/no-children-prop-with-children": [],
-  "react-jsx/no-comment-textnodes": [],
-  "react-jsx/no-key-after-spread": [],
-  "react-jsx/no-leaked-dollar": [],
-  "react-jsx/no-leaked-semicolon": [],
-  "react-jsx/no-namespace": [],
-  "react-jsx/no-useless-fragment": [
-    {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "allowEmptyFragment": {
-          "type": "boolean",
-          "description": "Allow empty fragments"
-        },
-        "allowExpressions": {
-          "type": "boolean",
-          "description": "Allow fragments with a single expression child"
-        }
-      }
-    }
-  ]
-}
-`;
-
 exports[`Plugin \"react-refresh\" config > Snapshot of the schema has not been changed 1`] = `
 {
   "react-refresh/only-export-components": [
@@ -249,128 +409,6 @@ exports[`Plugin \"react-refresh\" config > Snapshot of the schema has not been c
         }
       },
       "additionalProperties": false
-    }
-  ]
-}
-`;
-
-exports[`Plugin \"react-x\" config > Snapshot of the schema has not been changed 1`] = `
-{
-  "react-x/error-boundaries": [],
-  "react-x/exhaustive-deps": [
-    {
-      "type": "object",
-      "additionalProperties": false,
-      "enableDangerousAutofixThisMayCauseInfiniteLoops": false,
-      "properties": {
-        "additionalHooks": {
-          "type": "string"
-        },
-        "enableDangerousAutofixThisMayCauseInfiniteLoops": {
-          "type": "boolean"
-        },
-        "experimental_autoDependenciesHooks": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "requireExplicitEffectDeps": {
-          "type": "boolean"
-        }
-      }
-    }
-  ],
-  "react-x/globals": [],
-  "react-x/immutability": [],
-  "react-x/no-access-state-in-setstate": [],
-  "react-x/no-array-index-key": [],
-  "react-x/no-children-count": [],
-  "react-x/no-children-for-each": [],
-  "react-x/no-children-map": [],
-  "react-x/no-children-only": [],
-  "react-x/no-children-to-array": [],
-  "react-x/no-class-component": [],
-  "react-x/no-clone-element": [],
-  "react-x/no-component-will-mount": [],
-  "react-x/no-component-will-receive-props": [],
-  "react-x/no-component-will-update": [],
-  "react-x/no-context-provider": [],
-  "react-x/no-create-ref": [],
-  "react-x/no-direct-mutation-state": [],
-  "react-x/no-duplicate-key": [],
-  "react-x/no-forward-ref": [],
-  "react-x/no-implicit-children": [],
-  "react-x/no-implicit-key": [],
-  "react-x/no-implicit-ref": [],
-  "react-x/no-leaked-conditional-rendering": [],
-  "react-x/no-missing-component-display-name": [],
-  "react-x/no-missing-context-display-name": [],
-  "react-x/no-missing-key": [],
-  "react-x/no-misused-capture-owner-stack": [],
-  "react-x/no-nested-component-definitions": [],
-  "react-x/no-nested-lazy-component-declarations": [],
-  "react-x/no-set-state-in-component-did-mount": [],
-  "react-x/no-set-state-in-component-did-update": [],
-  "react-x/no-set-state-in-component-will-update": [],
-  "react-x/no-unnecessary-use-prefix": [],
-  "react-x/no-unsafe-component-will-mount": [],
-  "react-x/no-unsafe-component-will-receive-props": [],
-  "react-x/no-unsafe-component-will-update": [],
-  "react-x/no-unstable-context-value": [],
-  "react-x/no-unstable-default-props": [
-    {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "safeDefaultProps": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    }
-  ],
-  "react-x/no-unused-class-component-members": [],
-  "react-x/no-unused-props": [],
-  "react-x/no-use-context": [],
-  "react-x/purity": [],
-  "react-x/refs": [],
-  "react-x/rules-of-hooks": [
-    {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "additionalHooks": {
-          "type": "string"
-        }
-      }
-    }
-  ],
-  "react-x/set-state-in-effect": [],
-  "react-x/set-state-in-render": [],
-  "react-x/static-components": [],
-  "react-x/unsupported-syntax": [],
-  "react-x/use-memo": [],
-  "react-x/use-state": [
-    {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "enforceAssignment": {
-          "type": "boolean",
-          "default": true
-        },
-        "enforceLazyInitialization": {
-          "type": "boolean",
-          "default": true
-        },
-        "enforceSetterName": {
-          "type": "boolean",
-          "default": true
-        }
-      }
     }
   ]
 }

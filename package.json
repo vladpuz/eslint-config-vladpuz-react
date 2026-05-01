@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-vladpuz-react",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "My ESLint config for React",
   "keywords": [
     "vladpuz",
@@ -32,11 +32,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@eslint-react/eslint-plugin": "^5.6.6",
     "eslint-config-vladpuz": "^4.0.1",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-jsx": "^5.6.0",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "eslint-plugin-react-x": "^5.6.0"
+    "eslint-plugin-react-refresh": "^0.5.2"
   },
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.0",

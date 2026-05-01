@@ -4,9 +4,8 @@
 
 Features:
 
-- Supports JavaScript, TypeScript, mixed codebases, and
-  framework/renderer-agnostic React (pure base for use with any framework and
-  renderer!)
+- Supports JavaScript, TypeScript, mixed codebases, and framework-agnostic React
+  (pure base for use with any framework!)
 - Auto fix for formatting via
   [eslint-stylistic](https://github.com/eslint-stylistic/eslint-stylistic)
   (targeted for use without Prettier)

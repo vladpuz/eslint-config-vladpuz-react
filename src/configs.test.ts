@@ -1,12 +1,10 @@
 import type { Linter } from 'eslint'
 
+import react from '@eslint-react/eslint-plugin'
 import { testPluginConfig } from 'eslint-config-vladpuz'
 import reactHooks from 'eslint-plugin-react-hooks'
-import jsx from 'eslint-plugin-react-jsx'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import react from 'eslint-plugin-react-x'
 
-import { getJsxConfig } from './configs/jsx.ts'
 import { getReactConfig } from './configs/react.ts'
 import { getReactHooksConfig } from './configs/reactHooks.ts'
 import { getReactRefreshConfig } from './configs/reactRefresh.ts'
@@ -14,10 +12,11 @@ import { getReactRefreshConfig } from './configs/reactRefresh.ts'
 const REACT_HOOKS_RULES = new Set(Object.keys(reactHooks.rules))
 REACT_HOOKS_RULES.add('no-nested-component-definitions')
 REACT_HOOKS_RULES.add('no-nested-lazy-component-declarations')
-REACT_HOOKS_RULES.add('component-hook-factories')
 
-// Deprecate eslint-plugin-react-x equivalents of eslint-plugin-react-hooks
-for (const [ruleName, ruleConfig] of Object.entries(react.rules ?? {})) {
+const reactRules = react.rules ?? {}
+
+// Deprecate @eslint-react equivalents of eslint-plugin-react-hooks and delete aliases with "x-" prefix
+for (const [ruleName, ruleConfig] of Object.entries(reactRules)) {
   if (!ruleConfig.meta) {
     continue
   }
@@ -25,17 +24,15 @@ for (const [ruleName, ruleConfig] of Object.entries(react.rules ?? {})) {
   if (REACT_HOOKS_RULES.has(ruleName)) {
     ruleConfig.meta.deprecated = true
   }
+
+  if (ruleName.startsWith('x-')) {
+    // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+    delete reactRules[ruleName]
+  }
 }
 
 testPluginConfig(
-  'react-jsx',
-  jsx.rules ?? {},
-  getJsxConfig(),
-  jsx.configs.strict.rules ?? {},
-)
-
-testPluginConfig(
-  'react-x',
+  '@eslint-react',
   react.rules ?? {},
   getReactConfig(),
   [

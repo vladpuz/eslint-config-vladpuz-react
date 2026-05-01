@@ -2,10 +2,9 @@ import type { ESLintReactSettingsNormalized } from '@eslint-react/shared'
 import type { Linter } from 'eslint'
 import type { OnlyExportComponentsOptions } from 'eslint-plugin-react-refresh'
 
+import react from '@eslint-react/eslint-plugin'
 import vladpuzBase, { FILES_JS, FILES_TS, type Options } from 'eslint-config-vladpuz'
-import react from 'eslint-plugin-react-x'
 
-import { getJsxConfig } from './configs/jsx.ts'
 import { getReactConfig } from './configs/react.ts'
 import { getReactHooksConfig } from './configs/reactHooks.ts'
 import { getReactRefreshConfig } from './configs/reactRefresh.ts'
@@ -46,9 +45,6 @@ function vladpuz(options: ReactOptions = {}): Linter.Config[] {
     stylistic,
     jsx: true,
   })
-
-  const jsxConfig = getJsxConfig()
-  config.push(jsxConfig)
 
   const reactConfig = getReactConfig()
   config.push(reactConfig)

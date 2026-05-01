@@ -1,3 +1,10 @@
+## 2.2.0
+
+- Instead of `eslint-plugin-react-x` and `eslint-plugin-react-jsx` now used a
+  unified plugin which combines all individual plugins into one
+  `@eslint-react/eslint-plugin`.
+  - Added all new rules (rsc, dom, web-api, naming-convention).
+
 ## 2.1.0
 
 - Updated eslint-plugin-react-x to v5.
