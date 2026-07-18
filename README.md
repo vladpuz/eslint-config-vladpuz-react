@@ -366,6 +366,15 @@ This project follows [Semantic Versioning](https://semver.org). However, since
 this is just a configuration requiring opinions and many changeable components,
 we don't consider rule changes critical.
 
+For complete stability, you can pin a specific version of a package:
+
+```diff
+"devDependencies": {
+-  "eslint-config-vladpuz-react": "^2.2.0",
++  "eslint-config-vladpuz-react": "2.2.0",
+}
+```
+
 ## See Also
 
 - [eslint-config-vladpuz](https://github.com/vladpuz/eslint-config-vladpuz)

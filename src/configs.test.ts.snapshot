@@ -180,6 +180,7 @@ exports[`Plugin \"@eslint-react\" config > Snapshot of the schema has not been c
   ],
   "@eslint-react/web-api-no-leaked-event-listener": [],
   "@eslint-react/web-api-no-leaked-fetch": [],
+  "@eslint-react/web-api-no-leaked-intersection-observer": [],
   "@eslint-react/web-api-no-leaked-interval": [],
   "@eslint-react/web-api-no-leaked-resize-observer": [],
   "@eslint-react/web-api-no-leaked-timeout": []

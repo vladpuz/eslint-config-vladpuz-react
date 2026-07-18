@@ -1,3 +1,7 @@
+## 2.2.1
+
+- New rule @eslint-react/web-api-no-leaked-intersection-observer.
+
 ## 2.2.0
 
 - Instead of `eslint-plugin-react-x` and `eslint-plugin-react-jsx` now used a
