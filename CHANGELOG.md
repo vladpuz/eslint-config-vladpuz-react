@@ -1,3 +1,7 @@
+## 2.2.2
+
+- Dependencies updated.
+
 ## 2.2.1
 
 - New rule @eslint-react/web-api-no-leaked-intersection-observer.

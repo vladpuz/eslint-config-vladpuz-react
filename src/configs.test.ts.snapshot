@@ -18,13 +18,14 @@ exports[`Plugin \"@eslint-react\" config > Snapshot of the schema has not been c
       "properties": {
         "ignore": {
           "type": "array",
+          "description": "Property names to ignore.",
           "items": {
             "type": "string"
           }
         },
         "requireDataLowercase": {
           "type": "boolean",
-          "default": false
+          "description": "Require lowercase names for data-* attributes."
         }
       }
     }
@@ -403,6 +404,9 @@ exports[`Plugin \"react-refresh\" config > Snapshot of the schema has not been c
           }
         },
         "allowConstantExport": {
+          "type": "boolean"
+        },
+        "allowCompoundComponents": {
           "type": "boolean"
         },
         "checkJS": {
